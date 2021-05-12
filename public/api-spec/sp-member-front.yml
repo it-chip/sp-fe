@@ -1,0 +1,103 @@
+openapi: 3.0.1
+info:
+  title: sp-member-front
+  description: ' Member front API'
+  version: "1.0"
+servers:
+- url: http://localhost:8080
+tags: []
+paths:
+  /members:
+    post:
+      tags:
+      - MEMBER
+      summary: 회원 가입
+      description: 회원 가입
+      operationId: member-sign-up회원 가입
+      parameters:
+      - name: Version
+        in: header
+        description: 버전
+        required: true
+        schema:
+          type: string
+        example: "1.0"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/members-233443597'
+            examples:
+              member-sign-up:
+                value: "{\"email\":\"dlwoen9@naver.com\",\"password\":\"qwert12345\"\
+                  ,\"nickname\":\"두두\"}"
+              회원 가입:
+                value: "{\"email\":\"dlwoen9@naver.com\",\"password\":\"qwert12345\"\
+                  ,\"nickname\":\"두두\"}"
+      responses:
+        "201":
+          description: "201"
+  /members/login:
+    post:
+      tags:
+      - MEMBER
+      summary: 회원 로그인
+      description: 로그인
+      operationId: member-login로그인
+      parameters:
+      - name: Version
+        in: header
+        description: com.sp.presentation.router.MemberRouterTest@6489f89.description^|1.0
+        required: true
+        schema:
+          type: string
+        example: "1.0"
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/members-login1726690333'
+            examples:
+              로그인:
+                value: "{\"email\":\"dlwoen9@naver.com\",\"password\":\"qwert12345\"\
+                  }"
+              member-login:
+                value: "{\"email\":\"dlwoen9@naver.com\",\"password\":\"qwert12345\"\
+                  }"
+      responses:
+        "200":
+          description: "200"
+          content:
+            text/plain;charset=UTF-8:
+              schema:
+                $ref: '#/components/schemas/members-login486549215'
+              examples:
+                로그인:
+                  value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJubyI6MSwibmlja25hbWUiOiJlbmVuIiwiaXNzIjoiU1AiLCJpYXQiOjE2MTc2MzYwNzcsImVtYWlsIjoiZGx3b2VuOUBuYXZlci5jb20ifQ.rrATAXpcrhAo6nG3KqZOu_IqFGr5NxUk_Hg9h3FJajk
+                member-login:
+                  value: eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJubyI6MSwibmlja25hbWUiOiJlbmVuIiwiaXNzIjoiU1AiLCJpYXQiOjE2MTc2MzYwNzcsImVtYWlsIjoiZGx3b2VuOUBuYXZlci5jb20ifQ.rrATAXpcrhAo6nG3KqZOu_IqFGr5NxUk_Hg9h3FJajk
+components:
+  schemas:
+    members-login1726690333:
+      type: object
+      properties:
+        password:
+          type: string
+          description: 비밀번호
+        email:
+          type: string
+          description: 이메일 주소(아이디)
+    members-233443597:
+      type: object
+      properties:
+        password:
+          type: string
+          description: 비밀번호
+        nickname:
+          type: string
+          description: 닉네임
+        email:
+          type: string
+          description: 이메일 주소(아이디)
+    members-login486549215:
+      type: object
