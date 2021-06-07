@@ -1,0 +1,18 @@
+{
+  "presets": [
+    "@babel/preset-env",
+    "@babel/preset-react",
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    ["babel-plugin-named-asset-import", {
+      "loaderMap": {
+        "svg": {
+          "ReactComponent": "@svgr/webpack?-prettier,-svgo![path]"
+        }
+      }
+    },
+    "@babel/plugin-transform-runtime"
+    ]
+  ]
+}
