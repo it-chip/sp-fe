@@ -1,0 +1,6 @@
+{
+  "front":
+  [
+    {"url":"../api-spec/sp-member-front.yml", "name":"member"}
+  ]
+}
